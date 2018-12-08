@@ -1,0 +1,14 @@
+/*
+!.gitignore
+!.vimrc
+!.vim/
+.vim/spell/
+.vim/bundle/
+!.bashrc
+!.config/
+.config/*
+!.config/i3/
+!.config/i3blocks/
+!.config/ranger/
+!.config/dunst/
+
