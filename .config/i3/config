@@ -245,6 +245,10 @@ exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id redshift-qt
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 
+# enter the mount/unmount menu
+bindsym $mod+u exec mounter mount
+bindsym $mod+Shift+u exec mounter unmount
+
 #Setting the background:
 exec_always --no-startup-id feh --bg-scale `cat ~/.config/wall.set`
 exec --no-startup-id wallpaper
