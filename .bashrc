@@ -20,6 +20,9 @@ set -o vi
 export RANGER_LOAD_DEFAULT_RC=false
 export BROWSER=qutebrowser
 
+# makes xterm transparent
+[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" 0.94 >/dev/null
+
 #aliases 
 #make ls pretier
 alias ls='ls --color=auto'
@@ -30,5 +33,6 @@ alias cdp='cd ~/Dropbox/comp_sys/knetic_exchange/preference/'
 alias cdb='cd ~/Dropbox/comp_sys/knetic_exchange/bcsDC/'
 alias caesar='cd "/backup/wine/drive_c/GOG Games/Caesar 3/";WINEARCH=win32 WINEPREFIX=/backup/wine/ wine c3.exe'
 alias serv='python3 -m http.server'
+alias pi='sudo pacman -Sy'
 
 
