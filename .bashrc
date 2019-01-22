@@ -33,6 +33,6 @@ alias cdp='cd ~/Dropbox/comp_sys/knetic_exchange/preference/'
 alias cdb='cd ~/Dropbox/comp_sys/knetic_exchange/bcsDC/'
 alias caesar='cd "/backup/wine/drive_c/GOG Games/Caesar 3/";WINEARCH=win32 WINEPREFIX=/backup/wine/ wine c3.exe'
 alias serv='python3 -m http.server'
-alias pi='sudo pacman -Sy'
+alias pi='sudo pacman'
 
 

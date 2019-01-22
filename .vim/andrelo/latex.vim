@@ -12,9 +12,12 @@ inoremap çeq \begin{equation}<Enter>\label{eq:<++>}<Enter>\end{equation}<Enter>
 inoremap çfg \begin{figure}[h]<Enter>\centering<Enter>\includegraphics[width=0.5\paperwidth]{}<Enter>\caption{<++>}<Enter>\label{fig:<++>}<Enter>\end{figure}<Enter><Enter><++><Esc>5kf{a
 
 " creating tags
-inoremap çrf \ref{}<++><Esc>F{a
+inoremap çrf \cref{}<++><Esc>F{a
+inoremap çct \cite{}<++><Esc>F{a
 inoremap çni \noindent<space>
 inoremap çla \label{}<++><Esc>F{a
+inoremap çtb \textbf{}<++><Esc>F{a
+inoremap çem \emph{}<++><Esc>F{a
 
 " fast math
 inoremap çfa \forall<space>
