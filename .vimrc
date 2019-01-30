@@ -60,8 +60,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Using pywal to set the color scheme
-
 " set compilation script to run
 map <leader>c :!compiler <c-r>%<CR><cr>
 
@@ -75,7 +73,11 @@ set autoindent
 set encoding=utf-8 
 
 " making pretty
-syntax on
+syntax enable
+set background=dark
+"colorscheme solarized
+"let g:solarized_termcolors=256
+
 set relativenumber 
 set number 
 set ruler
@@ -83,7 +85,7 @@ set numberwidth=5
 set nocompatible
 
  set cursorline
-hi CursorLine ctermbg=0 cterm=none
+hi CursorLine ctermbg=darkgrey cterm=none
 
 "show the incomplete commands
 set showcmd
@@ -111,10 +113,9 @@ autocmd FileType html so ~/.vim/andrelo/html.vim
 " Navigating with guides
 	inoremap <C-j> <Esc>/<cr>"_c4l
 	vnoremap <C-j> <Esc>/<++><cr>"_c4l
-	map <C-j> <Esc>/<++><cr>"_c4l
+	map <C-j> <Esc><Esc>/<++><cr>"_c4l
 	inoremap çg <++>
 
-"color schemes 
 " hi CursorLine cterm=NONE ctermbg=4
 hi SpellBad cterm=underline ctermbg=NONE
 
