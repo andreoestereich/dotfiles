@@ -2,6 +2,7 @@
 
 " set spellcheck
 setlocal spell
+set omnifunc=syntaxcomplete#Complete
 
 " autoopeen pdf
 map <leader>p :!mupdf %:r.pdf & <cr><cr>

@@ -204,7 +204,7 @@ bindsym $mod+b exec lutris
 bindsym $mod+w exec $term -e vifm
 bindsym $mod+n exec $term -e newsboat
 bindsym $mod+Shift+m exec $term -e alsamixer
-bindsym $mod+f exec --no-startup-id qutebrowser
+bindsym $mod+f exec --no-startup-id surf `cat ~/.surf/favorites | dmenu`
 bindsym $mod+Shift+f exec --no-startup-id firefox
 bindsym $mod+Shift+c exec --no-startup-id chromium
 
@@ -239,16 +239,17 @@ bar {
         #status_command i3status
 }
 
+# enter the mount/unmount menu
+bindsym $mod+u exec mounter mount
+bindsym $mod+Shift+u exec mounter unmount
+
+
 # start up stuff
 exec --no-startup-id setxkbmap br
 exec --no-startup-id xcompmgr
 exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id redshift-qt
 exec --no-startup-id ~/.dropbox-dist/dropboxd
-
-# enter the mount/unmount menu
-bindsym $mod+u exec mounter mount
-bindsym $mod+Shift+u exec mounter unmount
 
 #Setting the background:
 exec_always --no-startup-id feh --bg-scale `cat ~/.config/wall.set`

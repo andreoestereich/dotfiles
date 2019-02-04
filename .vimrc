@@ -61,7 +61,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " set compilation script to run
-map <leader>c :!compiler <c-r>%<CR><cr>
+map <leader>c :!compiler <c-r>%<CR>
 
 " autowrite
 map <leader>s :w <cr>
@@ -77,6 +77,9 @@ syntax enable
 set background=dark
 "colorscheme solarized
 "let g:solarized_termcolors=256
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 set relativenumber 
 set number 
