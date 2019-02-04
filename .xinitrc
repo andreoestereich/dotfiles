@@ -1,4 +1,6 @@
 #exec gnome-session
 
-exec i3
+~/.config/dwm/startup.sh &
+exec dwm
+#exec i3
 
