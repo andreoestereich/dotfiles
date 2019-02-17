@@ -29,10 +29,11 @@ alias ls='ls --color=auto'
 
 alias v='vim'
 alias ytdm='youtube-dl -x --audio-format "mp3" --audio-quality 320K --add-metadata '
-alias cdp='cd ~/Dropbox/comp_sys/knetic_exchange/preference/'
 alias cdb='cd ~/Dropbox/comp_sys/knetic_exchange/bcsDC/'
+alias cdg='cd ~/Dropbox/comp_sys/knetic_exchange/bcsDCgalam/'
 alias caesar='cd "/backup/wine/drive_c/GOG Games/Caesar 3/";WINEARCH=win32 WINEPREFIX=/backup/wine/ wine c3.exe'
 alias serv='python3 -m http.server'
+alias mu='ncmpcpp'
 alias pi='sudo pacman'
 
 

@@ -2,3 +2,5 @@ Firefox     firefox
 Chromium    chromium
 Lutris      lutris
 Vifm        st -e vifm
+Mocp        st -e mocp
+LockScreen  bash ~/Dropbox/bin/lock.sh
