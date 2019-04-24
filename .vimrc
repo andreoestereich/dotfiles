@@ -111,11 +111,12 @@ set foldmethod=syntax
 
 " my things
 autocmd FileType tex so ~/.vim/andrelo/latex.vim
+autocmd FileType markdown so ~/.vim/andrelo/markdown.vim
 autocmd FileType html so ~/.vim/andrelo/html.vim
 
 " Navigating with guides
-	inoremap <C-j> <Esc>/<cr>"_c4l
-	vnoremap <C-j> <Esc>/<++><cr>"_c4l
+	inoremap <C-j> <Esc><Esc>/<++><cr>"_c4l
+	vnoremap <C-j> <Esc><Esc>/<++><cr>"_c4l
 	map <C-j> <Esc><Esc>/<++><cr>"_c4l
 	inoremap çg <++>
 

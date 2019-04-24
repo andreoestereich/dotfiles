@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/andrelo/.workrave'
 let g:netrw_dirhist_2='/home/andrelo/dwm'
 let g:netrw_dirhist_3='/home/andrelo/.config/dwm'
+let g:netrw_dirhist_4='/home/andrelo/.offlineimap'
+let g:netrw_dirhist_5='/home/andrelo/.getmail'

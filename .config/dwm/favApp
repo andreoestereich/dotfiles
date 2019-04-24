@@ -3,4 +3,6 @@ Chromium    chromium
 Lutris      lutris
 Vifm        st -e vifm
 Mocp        st -e mocp
-LockScreen  bash ~/Dropbox/bin/lock.sh
+LockScreen  bash lock.sh
+Newsboat    st -e newsboat
+Radio       st -e curseradio

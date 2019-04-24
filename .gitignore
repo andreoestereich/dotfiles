@@ -11,8 +11,10 @@
 !.config/
 .config/*
 !.config/i3/
+!.config/zathura/
 !.config/dwm/
 !.config/i3blocks/
 !.config/dunst/
 !.ssh/config
+.vim/.netrwhist
 

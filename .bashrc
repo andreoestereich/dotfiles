@@ -28,6 +28,8 @@ export BROWSER=qutebrowser
 alias ls='ls --color=auto'
 
 alias v='vim'
+alias z='zathura'
+alias s='startx'
 alias ytdm='youtube-dl -x --audio-format "mp3" --audio-quality 320K --add-metadata '
 alias cdb='cd ~/Dropbox/comp_sys/knetic_exchange/bcsDC/'
 alias cdg='cd ~/Dropbox/comp_sys/knetic_exchange/bcsDCgalam/'

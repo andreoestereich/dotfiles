@@ -1,11 +1,11 @@
 #!/bin/sh
 
 temp (){
-    echo 🌡️ $(sensors | awk '/Ambie/ {print $2}' | sed 's/+//')
+    echo $(sensors | awk '/Ambie/ {print $2}' | sed 's/+//')
 }
 
 cpuu (){
-    mpstat 1 1 | grep 'Average' | awk '{printf "⚙️ %04.1f%%", 100 -$12}'
+    mpstat 1 1 | grep 'Average' | awk '{printf "⚙️%02.f%%", 100 -$12}'
 }
 
 memo (){
@@ -13,7 +13,22 @@ memo (){
 }
 
 bate (){
-    acpi | cut -d " " -f3-5 |  sed -e "s/,//g;s/Discharging/🔋/;s/Charging/🔌/;s/Unknown/?/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g"
+    acpi | cut -d " " -f3-5 |  sed -e "s/,//g;s/Discharging/🔋/;s/Charging/🔌/;s/Unknown/?/;s/Full/⚡/;s/ 0*//g;s/ ://g"
+}
+
+trans (){
+    up=$(transmission-remote -l | awk 'END {printf("%.02f",$4/1024)}')
+    down=$(transmission-remote -l | awk 'END {printf("%.02f",$5/1024)}')
+    out="T"
+    if [[ $up != "0.00" ]]
+    then
+        out+="⯅$up"
+    fi
+    if [[ $down != "0.00" ]]
+    then
+        out+="⯆$down"
+    fi
+    echo $out
 }
 
 mocStat (){
@@ -33,6 +48,16 @@ mocStat (){
     fi
 }
 
+redShift (){
+    period=$(redshift -p | grep Period)
+    if [[ $period == "Period: Night" ]]
+    then
+        echo 🌘
+    else
+        echo ☀️
+    fi
+}
+
 volShow (){
     #- Shows volume 🔊, 🔇 if muted.
     #- Middle click to mute.
@@ -49,8 +74,12 @@ volShow (){
         icon="🔉"
     fi
 
-    printf "%s %s%%\\n" "$icon" "$vol"
+    printf "%s%s%%\\n" "$icon" "$vol"
 }
 
+gotMail (){
+    let mail=$(ls $HOME/Mail/idUff/Inbox/new/ | wc -l )+$(ls $HOME/Mail/ifUff/new/ | wc -l )
+    echo $mail 📫
+}
 
-echo "$(mocStat)|$(temp)|$(cpuu)|$(memo)|$(bate)|$(volShow)|$(date '+%d %b (%a) %R')"
+echo "$(mocStat)|$(trans)|$(gotMail)|$(temp)|$(redShift)|$(cpuu)|$(memo)|$(bate)|$(volShow)|$(date '+%d %b(%a)%R')"
