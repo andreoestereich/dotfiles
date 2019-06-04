@@ -66,6 +66,12 @@ map <leader>c :!compiler <c-r>%<CR>
 " autowrite
 map <leader>s :w <cr>
 
+" Toogle paste mode
+set pastetoggle=<C-v>
+
+" dictionary search
+map <leader>d :!sdcv <C-r><C-w><Enter>
+
 set tabstop=4 shiftwidth=4 expandtab
 set autoindent
 
@@ -77,9 +83,9 @@ syntax enable
 set background=dark
 "colorscheme solarized
 "let g:solarized_termcolors=256
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+"let &t_SI = "\<Esc>[6 q"
+"let &t_SR = "\<Esc>[4 q"
+"let &t_EI = "\<Esc>[2 q"
 
 set relativenumber 
 set number 
@@ -113,6 +119,7 @@ set foldmethod=syntax
 autocmd FileType tex so ~/.vim/andrelo/latex.vim
 autocmd FileType markdown so ~/.vim/andrelo/markdown.vim
 autocmd FileType html so ~/.vim/andrelo/html.vim
+autocmd FileType mail so ~/.vim/andrelo/mail.vim
 
 " Navigating with guides
 	inoremap <C-j> <Esc><Esc>/<++><cr>"_c4l

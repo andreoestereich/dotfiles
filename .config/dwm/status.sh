@@ -1,7 +1,7 @@
 #!/bin/sh
 
 temp (){
-    echo $(sensors | awk '/Ambie/ {print $2}' | sed 's/+//')
+    echo "$(sensors | awk '/Ambie/ {print $2}' | sed 's/+//')"
 }
 
 cpuu (){
@@ -9,7 +9,7 @@ cpuu (){
 }
 
 memo (){
-    echo 💾$(free -h | awk '/Mem/ {print $3}')
+    echo "💾$(free -h | awk '/Mem/ {print $3}')"
 }
 
 bate (){
@@ -20,24 +20,28 @@ trans (){
     up=$(transmission-remote -l | awk 'END {printf("%.02f",$4/1024)}')
     down=$(transmission-remote -l | awk 'END {printf("%.02f",$5/1024)}')
     out="T"
-    if [[ $up != "0.00" ]]
+    if [ $up != "0.00" ]
     then
-        out+="⯅$up"
+        out=$(echo "$out⯅$up")
     fi
-    if [[ $down != "0.00" ]]
+    if [ $down != "0.00" ]
     then
-        out+="⯆$down"
+        out=$(echo "$out⯆$down")
     fi
     echo $out
+}
+
+wifi (){
+    iw dev wlp1s0 link | awk '/signal/{printf "📡%.0f%%",($2 + 100)*2}'
 }
 
 mocStat (){
     if [ "$(pidof mocp)" ] 
     then
-        if [[ `mocp -Q %state` == "PAUSE" ]] 
+        if [ "$(mocp -Q %state)" = "PAUSE" ] 
         then
             echo ⏸️ 
-        elif [[ `mocp -Q %state` == "STOP" ]] 
+        elif [ "$(mocp -Q %state)" = "STOP" ] 
         then
             echo ⏹️
         else
@@ -50,7 +54,7 @@ mocStat (){
 
 redShift (){
     period=$(redshift -p | grep Period)
-    if [[ $period == "Period: Night" ]]
+    if [ "$period" = "Period: Night" ]
     then
         echo 🌘
     else
@@ -78,8 +82,8 @@ volShow (){
 }
 
 gotMail (){
-    let mail=$(ls $HOME/Mail/idUff/Inbox/new/ | wc -l )+$(ls $HOME/Mail/ifUff/new/ | wc -l )
-    echo $mail 📫
+    mail="$(expr $(ls $HOME/Mail/idUff/Inbox/new/ | wc -l ) + $(ls $HOME/Mail/ifmail/Inbox/new/ | wc -l ))"
+    echo 📫 "$mail"
 }
 
-echo "$(mocStat)|$(trans)|$(gotMail)|$(temp)|$(redShift)|$(cpuu)|$(memo)|$(bate)|$(volShow)|$(date '+%d %b(%a)%R')"
+echo "$(mocStat)|$(trans)|$(wifi)|$(gotMail)|$(temp)|$(redShift)|$(cpuu)|$(memo)|$(bate)|$(volShow)|$(date '+%d %b(%a)%R')"

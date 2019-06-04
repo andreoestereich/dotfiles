@@ -6,9 +6,10 @@ xcompmgr &
 #nm-applet &
 redshift -l -22.9:-43.1 &
 $(sleep 4m; transmission-daemon )&
-~/.dropbox-dist/dropboxd &
+#~/.dropbox-dist/dropboxd &
 dunst &
 xbanish &
+sxhkd &
 bash /home/andrelo/Dropbox/bin/randomWall &
 #blueman-applet &
 $( sleep 1s

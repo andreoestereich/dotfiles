@@ -10,7 +10,8 @@ map <leader>p :!mupdf %:r.pdf & <cr><cr>
 " open tabs as spaces
 " Creating environments
 inoremap çeq \begin{equation}<Enter>\label{eq:<++>}<Enter>\end{equation}<Enter><++><Esc>2kO
-inoremap çfg \begin{figure}[h]<Enter>\centering<Enter>\includegraphics[width=0.5\paperwidth]{}<Enter>\caption{<++>}<Enter>\label{fig:<++>}<Enter>\end{figure}<Enter><Enter><++><Esc>5kf{a
+inoremap çit \begin{itemize}<Enter>\item <Enter>\end{itemize}<Enter><++><Esc>2kA
+inoremap çfg \begin{figure}[h]<Enter>\centering<Enter>\includegraphics[width=0.5\textwidth]{}<Enter>\caption{<++>}<Enter>\label{<++>}<Enter>\end{figure}<Enter><Enter><++><Esc>5kf{a
 
 " creating tags
 inoremap çrf \cref{}<++><Esc>F{a
