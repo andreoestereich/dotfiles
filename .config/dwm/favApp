@@ -1,10 +1,12 @@
 Firefox     firefox
 Chromium    chromium
-Lutris      lutris
 Mutt        st -e neomutt
 Mocp        st -e mocp
 LockScreen  bash lock.sh
+Telegram    telegram-desktop
 Newsboat    st -e newsboat
+Pavu        pavucontrol
+Arandr      arandr
 Radio       st -e curseradio
 Vifm        st -e vifm
-Mario       bash /home/andrelo/Dropbox/bin/mario
+Mario       mario

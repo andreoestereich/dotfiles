@@ -9,7 +9,7 @@ map <leader>p :!mupdf %:r.pdf & <cr><cr>
 
 " open tabs as spaces
 " Creating environments
-inoremap çeq \begin{equation}<Enter>\label{eq:<++>}<Enter>\end{equation}<Enter><++><Esc>2kO
+inoremap çeq \begin{equation}<Enter>\label{<++>}<Enter>\end{equation}<Enter><++><Esc>2kO
 inoremap çit \begin{itemize}<Enter>\item <Enter>\end{itemize}<Enter><++><Esc>2kA
 inoremap çfg \begin{figure}[h]<Enter>\centering<Enter>\includegraphics[width=0.5\textwidth]{}<Enter>\caption{<++>}<Enter>\label{<++>}<Enter>\end{figure}<Enter><Enter><++><Esc>5kf{a
 
@@ -17,9 +17,17 @@ inoremap çfg \begin{figure}[h]<Enter>\centering<Enter>\includegraphics[width=0.
 inoremap çrf \cref{}<++><Esc>F{a
 inoremap çct \cite{}<++><Esc>F{a
 inoremap çni \noindent<space>
+inoremap çch \chapter{}<++><Esc>F{a
+inoremap çse \section{}<++><Esc>F{a
+inoremap çss \subsection{}<++><Esc>F{a
 inoremap çla \label{}<++><Esc>F{a
 inoremap çtb \textbf{}<++><Esc>F{a
 inoremap çem \emph{}<++><Esc>F{a
+inoremap çca \emph{}<++><Esc>F{a
+
+
+
+inoremap çkk  \langle k \rangle
 
 " fast math
 inoremap çfa \forall<space>
@@ -33,6 +41,7 @@ inoremap ~+ \sum
 
 " enclosing
 inoremap [[ \left[ \right]<++><Esc>F[a
+inoremap {{ \left\{ \right\}<++><Esc>F{a
 inoremap (( \left( \right)<++><Esc>F(a
 inoremap "" ``''<++><Esc>F`a
 
@@ -84,4 +93,5 @@ inoremap  ~vt \vartheta
 inoremap  ~< \langle
 inoremap  ~> \rangle
 inoremap  ~8 \infty
+inoremap  'l \ell
 

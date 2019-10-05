@@ -67,7 +67,7 @@ map <leader>c :!compiler <c-r>%<CR>
 map <leader>s :w <cr>
 
 " Toogle paste mode
-set pastetoggle=<C-v>
+set pastetoggle=F7
 
 " dictionary search
 map <leader>d :!sdcv <C-r><C-w><Enter>
@@ -120,6 +120,7 @@ autocmd FileType tex so ~/.vim/andrelo/latex.vim
 autocmd FileType markdown so ~/.vim/andrelo/markdown.vim
 autocmd FileType html so ~/.vim/andrelo/html.vim
 autocmd FileType mail so ~/.vim/andrelo/mail.vim
+autocmd FileType c so ~/.vim/andrelo/c.vim
 
 " Navigating with guides
 	inoremap <C-j> <Esc><Esc>/<++><cr>"_c4l

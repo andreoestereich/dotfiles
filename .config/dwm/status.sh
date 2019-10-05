@@ -2,6 +2,7 @@
 
 temp (){
     echo "$(sensors | awk '/Ambie/ {print $2}' | sed 's/+//')"
+    #printf "%.0f°C\n" $(acpi -t | cut -d\  -f4)
 }
 
 cpuu (){
@@ -53,7 +54,7 @@ mocStat (){
 }
 
 redShift (){
-    period=$(redshift -p | grep Period)
+    period=$(redshift -l manual -p | grep Period)
     if [ "$period" = "Period: Night" ]
     then
         echo 🌘
@@ -86,4 +87,4 @@ gotMail (){
     echo 📫 "$mail"
 }
 
-echo "$(mocStat)|$(trans)|$(wifi)|$(gotMail)|$(temp)|$(redShift)|$(cpuu)|$(memo)|$(bate)|$(volShow)|$(date '+%d %b(%a)%R')"
+echo "$(mocStat)|$(wifi)|$(gotMail)|$(temp)|$(redShift)|$(cpuu)|$(memo)|$(bate)|$(volShow)|$(date '+%d %b(%a)%R')"

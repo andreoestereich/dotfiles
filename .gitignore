@@ -5,6 +5,7 @@
 !.vim/
 .vim/spell/
 .vim/bundle/
+!.bash_profile
 !.bashrc
 !.Xdefaults
 !.xinitrc
@@ -13,7 +14,7 @@
 !.config/i3/
 !.config/zathura/
 !.config/dwm/
-!.config/i3blocks/
+!.config/youtube-viewer/
 !.config/dunst/
 !.ssh/config
 .vim/.netrwhist
