@@ -4,11 +4,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Activates vi mode
-set -o vi
-
 # config the cmd text
-PS1='\t [\u@$(hostname)] $(pwd)\n> '
+PS1='\t [\u@$(hostname)] $(gitPS)$(pwd)\n> '
 
 #aliases 
 #make ls pretier
@@ -22,4 +19,4 @@ alias ytdm='youtube-dl -x --audio-format "mp3" --audio-quality 320K --add-metada
 alias serv='python3 -m http.server'
 alias pi='sudo pacman'
 alias cdrt='cd ~/.wine/drive_c/Program\ Files\ \(x86\)/Railroad\ Tycoon\ II/'
-alias wtt='curl wttr.in/mondai-brazil'
+alias wtt="cat $HOME/.local/share/weatherreport"

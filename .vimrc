@@ -138,6 +138,13 @@ set path+=**
 " Displays all matching files when we use tab to complete
 set wildmenu
 
+" highlight search results
+set hlsearch
+
+" The number of screen lines to keep above and below the cursor.
+set scrolloff=1
+set title
+
 " airline tweaks
 let g:airline_powerline_fonts = 1
 set laststatus=2

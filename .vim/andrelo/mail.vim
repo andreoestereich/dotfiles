@@ -22,6 +22,7 @@ inoremap 'u ú
 inoremap 'U Ú
 inoremap çç Abraço,<Enter>André.
 inoremap ç= ≠
+inoremap ç8 ∞
 
 " greek letters
 inoremap .a α
