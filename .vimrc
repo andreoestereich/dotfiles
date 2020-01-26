@@ -143,7 +143,6 @@ set hlsearch
 
 " The number of screen lines to keep above and below the cursor.
 set scrolloff=1
-set title
 
 " airline tweaks
 let g:airline_powerline_fonts = 1

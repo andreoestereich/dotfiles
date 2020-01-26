@@ -2,9 +2,8 @@
 !.gitignore
 !.gitconfig
 !.vimrc
-!.vim/
-.vim/spell/
-.vim/bundle/
+!.vim/andrelo/
+!.vim/colors/
 !.bash_profile
 !.bashrc
 !.Xdefaults
@@ -17,5 +16,4 @@
 !.config/youtube-viewer/
 !.config/dunst/
 !.ssh/config
-.vim/.netrwhist
 

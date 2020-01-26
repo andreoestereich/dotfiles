@@ -9,4 +9,4 @@ tgKbmap &
 #wallpaper &
 randomWall &
 sxhkd &
-slstatus &>/dev/null &
+#slstatus &>/dev/null &

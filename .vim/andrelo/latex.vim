@@ -192,6 +192,7 @@ inoremap çqq \qquad
 
 
 inoremap çkk  \langle k \rangle
+inoremap çmm  \mu_{ij}
 
 " fast math
 inoremap çfa \forall<space>

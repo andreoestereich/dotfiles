@@ -2,7 +2,7 @@
 PATH=$PATH:~/.local/bin
 
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=brave
 export TERMINAL=st
 export PDFVIEWER=zathura
 export XDG_CONFIG_HOME=$HOME/.config
