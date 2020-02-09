@@ -1,3 +1,5 @@
 [user]
 	email = andreoestereich@gmail.com
 	name = André Luis Oestereich
+[credential]
+	helper = cache

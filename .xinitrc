@@ -1,9 +1,9 @@
-#exec gnome-session
 
-~/.config/dwm/startup.sh &
-$(sleep 1s; bash ~/Dropbox/bin/tgKbmap) &
+#~/.config/dwm/startup.sh &
+#$(sleep 1s; bash ~/Dropbox/bin/tgKbmap) &
 #$(sleep 10s; python ~/Dropbox/bin/wallpaper) &
-setroot -cursor_name XC_gumby
+xsetroot -cursor_name left_ptr 
+~/.config/bspwm/startup.sh &
 
 sxhkd &
 exec bspwm

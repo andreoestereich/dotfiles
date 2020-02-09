@@ -8,8 +8,12 @@
 PS1='\t [\u@$(hostname)] $(gitPS)$(pwd)\n> '
 
 #aliases 
-#make ls pretier
+#make ls colored
 alias ls='ls --color=auto'
+
+function yta() {
+        mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
+    }
 
 alias v='vim -c "set title"'
 alias z='zathura'
@@ -19,7 +23,8 @@ alias ytdm='youtube-dl -x --audio-format "mp3" --audio-quality 320K --add-metada
 alias serv='python3 -m http.server'
 alias pi='sudo pacman'
 alias cdc='cd /home/andrelo/.wine/drive_c/SIERRA/Caesar3/'
-alias wtt="cat $HOME/.local/share/weatherreport"
+alias wtt="curl -s wttr.in/mondai-brazil"
+alias neomutt='neomutt; pkill -RTMIN+2 lemonblocks;'
 
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
