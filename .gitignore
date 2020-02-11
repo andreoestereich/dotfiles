@@ -10,7 +10,8 @@
 !.xinitrc
 !.config/
 .config/*
-!.config/i3/
+!.config/bspwm/
+!.config/sxhkd/
 !.config/zathura/
 !.config/dwm/
 !.config/youtube-viewer/
