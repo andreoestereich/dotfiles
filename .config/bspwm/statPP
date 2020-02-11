@@ -1,0 +1,46 @@
+#!/bin/dash
+
+getIcon ()
+{
+    case "$1" in
+        *Firefox*) echo -n   ;;
+        *Chromium*) echo -n  ;;
+        *Telegram*) echo -n  ;;
+        newsboat) echo -n ;;
+        mocp) echo -n  ;;
+        neomutt) echo -n -e "";;
+        st) echo -n   ;;
+        *Vim*) echo -n   ;;
+        *VIM*) echo -n  ;;
+        *) echo -n ;;
+    esac 
+}
+
+monitors=$(bspc query -T -m )
+desktops=$(bspc query -T -d )
+
+current=$(echo $desktops | jq '.name' | sed 's/\"//g')
+#STAT=" "
+
+STAT="%{l} "
+i=0
+for desk in $(bspc query -D --names)
+do
+    focusID=$(echo $monitors | jq ".desktops[$i].focusedNodeId")
+    if [ "$focusID" != "0" ]
+    then
+        icon=$(getIcon "$( xtitle $focusID )")
+        STAT=$STAT$([ $desk -eq $current ] &&  echo -n "%{+u} $icon %{-u}" || echo -n " $icon")
+    else
+        STAT=$STAT$([ $desk -eq $current ] &&  echo -n "%{+u} "$current" %{-u}" || echo -n " $desk")
+    fi
+    i=$((i+1))
+done
+
+case "$(echo $desktops | jq '.layout')" in
+    *tiled*) STAT=$STAT"|[]=" ;;
+    *monocle*) STAT=$STAT"|[M]" ;;
+esac
+
+#STAT+=$(echo -n "%{B#000000}%{r}$(date '+%d %b (%a) %R')")
+echo -n $STAT | sed 's/ \%{+u/\%{+u/;s/-u} /-u}/;s/  / /g'

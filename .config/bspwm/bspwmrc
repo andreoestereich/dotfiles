@@ -1,0 +1,23 @@
+#! /bin/sh
+
+# If refreshing bspwm, remove all previous rules to prevent doubling up.
+bspc rule -r "*"
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+bspc desktop -f 1
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.51
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config ignore_ewmh_focus    true
+bspc config automatic_scheme     longest_side
+
+lemonblocks | lemonbar -p -u 3 -f "Hack:size=10" -f "Font Awesome" -B"#000" &
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Zathura state=tiled
+bspc rule -a lbry state=monocle
+#bspc rule -a Chromium desktop='^2'
