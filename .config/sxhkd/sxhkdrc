@@ -5,6 +5,18 @@ super + Return
 # program launcher
 super + p
 	dmenu_run
+#
+# bluetooth connecting
+super + shift + b
+    $HOME/.local/bin/bluetoothmenu
+
+# pass launcher
+super + shift + i
+	passmenu
+
+#clipboards mais importantes
+super + shift + c
+	favclips
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -17,12 +29,10 @@ super + w
     exefavs
 super + shift + e
     texEDIT
-super + shift + j
-    passmenu
 super + shift + p
     mario
 super + shift + m
-	$TERMINAL -e neomutt
+	{ $TERMINAL -e neomutt; pkill -RTMIN+2 lemonblocks; }
 super + shift + n
 	$TERMINAL -e newsboat
 super + shift + i
@@ -33,6 +43,15 @@ super + shift + o
 	$TERMINAL -e ncmpcpp &> /dev/null
 super + shift + k
 	$BROWSER
+
+# Recording shit
+super + shift + r
+    dmenurecord
+super + r
+    dmenurecord kill
+
+super + shift + t
+     mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title='mpvfloat' /dev/video0
 
 #Media keys
 #XF86AudioPlay
@@ -50,75 +69,75 @@ XF86AudioPlay
 XF86AudioMute
     {pamixer -t;pkill -RTMIN+4 lemonblocks}
 
+##
+## bspwm hotkeys
+##
 #
-# bspwm hotkeys
+## quit/restart bspwm
+#super + alt + {q,r}
+#	bspc {quit,wm -r}
 #
-
-# quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
-
-# close and kill
-super + {_,shift + }q
-	{bspc node -{c,k}; pkill -RTMIN+10 lemonblocks}
+## close and kill
+#super + {_,shift + }q
+#	{bspc node -{c,k}; pkill -RTMIN+10 lemonblocks}
+##
+## alternate between the tiled and monocle layout
+#super + m
+#	bspc desktop -l next
 #
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
-
-# swap the current node and the biggest node
-super + shift + Return
-	bspc node -s biggest.local --follow
-
-# set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
-# set the node flags
-#super + ctrl + {m,x,y,z}
-#	bspc node -g {marked,locked,sticky,private}
-
+## swap the current node and the biggest node
+#super + shift + Return
+#	bspc node -s biggest.local --follow
 #
-# focus/swap
+## set the window state
+#super + {t,shift + t,s,f}
+#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 #
-
-# focus the node in the given direction
-#super + {_,shift + }{h,j,k,l}
-#	bspc node -{f,s} {west,south,north,east}
-
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous node in the current desktop
-super + {j,k}
-	bspc node -f {next,prev}.local
-
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
-
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	{bspc {desktop -f,node -d} '^{1-9,10}';pkill -RTMIN+10 lemonblocks}
-
-super {comma,period}
-    bspc monitor {prev,next}
-
-# expand a window by moving one of its side outward
-super + {h,l}
-	tillresize {h,l}
-
-# move a floating window
-super + alt + {h,j,k,l}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+## set the node flags
+##super + ctrl + {m,x,y,z}
+##	bspc node -g {marked,locked,sticky,private}
+#
+##
+## focus/swap
+##
+#
+## focus the node in the given direction
+##super + {_,shift + }{h,j,k,l}
+##	bspc node -{f,s} {west,south,north,east}
+#
+## focus the node for the given path jump
+#super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
+#
+## focus the next/previous node in the current desktop
+#super + {j,k}
+#	bspc node -f {next,prev}.local
+#
+## focus the next/previous desktop in the current monitor
+#super + bracket{left,right}
+#	bspc desktop -f {prev,next}.local
+#
+## focus the last node/desktop
+#super + {grave,Tab}
+#	bspc {node,desktop} -f last
+#
+## focus the older or newer node in the focus history
+#super + {o,i}
+#	bspc wm -h off; \
+#	bspc node {older,newer} -f; \
+#	bspc wm -h on
+#
+## focus or send to the given desktop
+#super + {_,shift + }{1-9,0}
+#	{bspc {desktop -f,node -d} '^{1-9,10}';pkill -RTMIN+10 lemonblocks}
+#
+#super {comma,period}
+#    bspc monitor {prev,next}
+#
+## expand a window by moving one of its side outward
+#super + {h,l}
+#	tillresize {h,l}
+#
+## move a floating window
+#super + alt + {h,j,k,l}
+#	bspc node -v {-20 0,0 20,0 -20,20 0}
