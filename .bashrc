@@ -7,13 +7,21 @@
 # config the cmd text
 PS1='\t [\u@$(hostname)] $(gitPS)$(pwd)\n> '
 
-#aliases 
+#aliases
 #make ls colored
 alias ls='ls --color=auto'
 
 function yta() {
         mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
     }
+
+function swallow() {
+    id=$(xdo id)
+    xdo hide
+    $("$@") > /dev/null 2>&1
+    xdo show "$id"
+    unset id
+}
 
 alias v='nvim'
 alias z='zathura'
@@ -25,4 +33,3 @@ alias pi='sudo pacman'
 alias cdc='cd /home/andrelo/.wine/drive_c/SIERRA/Caesar3/'
 alias wtt="curl -s wttr.in/mondai-brazil"
 alias neomutt='neomutt; pkill -RTMIN+2 lemonblocks;'
-
