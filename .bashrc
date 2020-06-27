@@ -24,7 +24,9 @@ function swallow() {
 }
 
 alias v='nvim'
-alias z='zathura'
+alias z='swallow zathura'
+alias mpv='swallow mpv'
+alias sxiv='swallow sxiv'
 alias s='startx'
 alias yt='youtube-viewer -f --player=mpv --append-arg="ytdl-format=22/mp4/best --keep-open"'
 alias ytdm='youtube-dl -x --audio-format "mp3" --audio-quality 320K --add-metadata '
