@@ -7,9 +7,8 @@
 # config the cmd text
 PS1='\t [\u@$(hostname)] $(gitPS)$(pwd)\n> '
 
-#aliases
-#make ls colored
-alias ls='ls --color=auto'
+GPG_TTY=$(tty)
+export GPG_TTY
 
 function yta() {
         mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
@@ -23,9 +22,42 @@ function swallow() {
     unset id
 }
 
+function n() {
+    # Block nesting of nnn in subshells
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, remove the "export" as in:
+    #     NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    # NOTE: NNN_TMPFILE is fixed, should not be modified
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    # stty start undef
+    # stty stop undef
+    # stty lwrap undef
+    # stty lnext undef
+
+    nnn "$@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+
+#aliases
+#make ls colored
+alias ls='ls --color=auto'
 alias v='nvim'
+alias vim='nvim'
 alias z='swallow zathura'
 alias mpv='swallow mpv'
+alias julius='cd /home/andrelo/.wine/drive_c/GOG Games/Caesar3/; swallow julius-game'
+alias augustus='cd /home/andrelo/.wine/drive_c/GOG\ Games/Caesar\ 3/; swallow augustus-game'
 alias sxiv='swallow sxiv'
 alias s='startx'
 alias yt='youtube-viewer -f --player=mpv --append-arg="ytdl-format=22/mp4/best --keep-open"'

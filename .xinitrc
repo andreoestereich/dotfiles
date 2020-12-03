@@ -8,3 +8,4 @@
 sxhkd &
 #exec bspwm
 exec dwm
+#exec startlxde

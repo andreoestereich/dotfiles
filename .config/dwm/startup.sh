@@ -2,8 +2,10 @@
 
 xcompmgr &
 dunst &
+mpd &
 redshift &
 xbanish &
+sudo crond &
 tgKbmap &
 wallpaper &
 lemonblocks &

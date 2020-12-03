@@ -29,6 +29,8 @@ super + w
     exefavs
 super + shift + e
     texEDIT
+super + shift + f
+    n
 super + shift + p
     mario
 super + shift + m
@@ -63,7 +65,7 @@ XF86Audio{Next,Prev}
 XF86AudioPlay
     mpc toggle
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
-    xbacklight {-inc,-dec} 5
+    xbacklight {-inc,-dec} 5; pkill -RTMIN+5 lemonblocks;
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
     {pamixer {-d,-i} 5;pkill -RTMIN+4 lemonblocks}
 XF86AudioMute
