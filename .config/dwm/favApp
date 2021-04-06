@@ -8,6 +8,6 @@ Newsboat    st -e newsboat
 Pavu        pavucontrol
 Arandr      arandr
 Lutris      lutris
-Radio       st -e curseradio
+Retroarch   retroarch
 Vifm        st -e vifm
 Mario       mario

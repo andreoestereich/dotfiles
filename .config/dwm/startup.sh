@@ -4,6 +4,7 @@ xcompmgr &
 dunst &
 mpd &
 redshift &
+acpihandler &
 xbanish &
 sudo crond &
 tgKbmap &

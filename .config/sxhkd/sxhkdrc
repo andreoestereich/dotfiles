@@ -20,11 +20,13 @@ super + shift + c
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	{pkill -USR1 -x sxhkd; notify-send "SXHKD config reloaded."; }
 
 # Basic binds
 alt + shift + k
     tgKbmap
+super + c
+    characterclip
 super + w
     exefavs
 super + shift + e
@@ -40,18 +42,20 @@ super + shift + n
 super + shift + i
 	$TERMINAL -e htop
 super + shift + f
-	$TERMINAL -e lf
+	$TERMINAL -e nnn
 super + shift + o
 	$TERMINAL -e ncmpcpp &> /dev/null
 super + shift + k
 	$BROWSER
-
-# Recording shit
 super + shift + r
-    dmenurecord
-super + r
-    dmenurecord kill
+	sxiv $HOME/.cache/meteogram
 
+## Recording shit
+#super + shift + r
+#    dmenurecord
+#super + r
+#    dmenurecord kill
+#
 super + shift + t
      mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title='mpvfloat' /dev/video0
 

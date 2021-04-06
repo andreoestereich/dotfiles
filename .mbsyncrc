@@ -1,0 +1,138 @@
+IMAPAccount idUff
+# Address to connect to
+Host imap.gmail.com
+User andrelo@id.uff.br
+PassCmd "pass idmail"
+# To store the password in an encrypted file use PassCmd instead of Pass
+# PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
+#
+# Use SSL
+SSLType IMAPS
+# The following line should work. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+#CertificateFile ~/.cert/imap.gmail.com.pem
+#CertificateFile ~/.cert/Equifax_Secure_CA.pem
+
+IMAPStore gmail-remote
+Account idUff
+
+MaildirStore gmail-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/Mail/idUff/
+Inbox ~/Mail/idUff/Inbox/
+
+Channel gmailInbox
+Far :gmail-remote:INBOX
+Near :gmail-local:Inbox
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+#Patterns !\[Gmail\]
+#"[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/Archived"
+#"[Gmail]/All Mail"
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Near
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+Channel gmail-sent
+Far :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:Sent
+Create Near
+
+Channel gmail-draft
+Far :gmail-remote:"[Gmail]/Drafts"
+Near :gmail-local:Drafts
+Create Near
+
+Group idUff
+Channel gmailInbox
+Channel gmail-sent
+Channel gmail-draft
+
+IMAPAccount uceff
+# Address to connect to
+Host imap.gmail.com
+User andreoestereich@uceff.edu.br
+PassCmd "pass uceff"
+# To store the password in an encrypted file use PassCmd instead of Pass
+# PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
+#
+# Use SSL
+SSLType IMAPS
+# The following line should work. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+#CertificateFile ~/.cert/imap.gmail.com.pem
+#CertificateFile ~/.cert/Equifax_Secure_CA.pem
+
+IMAPStore ucgm-remote
+Account uceff
+
+MaildirStore uc-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/Mail/uceff/
+Inbox ~/Mail/uceff/Inbox/
+
+Channel ucInbox
+Far :ucgm-remote:INBOX
+Near :uc-local:Inbox
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+#Patterns !\[Gmail\]
+#"[Gmail]/Sent Mail" "[Gmail]/Starred" "[Gmail]/Archived"
+#"[Gmail]/All Mail"
+# Or include everything
+#Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Near
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+Channel uc-sent
+Far :ucgm-remote:"[Gmail]/Sent Mail"
+Near :uc-local:Sent
+Create Near
+
+Channel uc-draft
+Far :ucgm-remote:"[Gmail]/Drafts"
+Near :uc-local:Drafts
+Create Near
+
+Group Uceff
+Channel ucInbox
+Channel uc-sent
+Channel uc-draft
+
+
+#IMAPAccount ifmail
+## Address to connect to
+#Host ariadne.if.uff.br
+#User andrelo
+##143
+## Use SSL
+#SSLType None
+#Port 143
+##STARTTLS
+## The following line should work. If get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+##CertificateFile ~/.cert/imap.gmail.com.pem
+##CertificateFile ~/.cert/Equifax_Secure_CA.pem
+#
+#IMAPStore ifmail-remote
+#Account ifmail
+#
+#MaildirStore ifmail-local
+#Subfolders Verbatim
+## The trailing "/" is important
+#Path ~/Mail/ifmail/
+#Inbox /home/andrelo/Mail/ifmail/Inbox/
+#
+#Channel ifmail
+#Far :ifmail-remote:
+#Near :ifmail-local:
+#Patterns *
+## Automatically create missing mailboxes, both locally and on the server
+#Create Near
+## Save the synchronization state files in the relevant directory
+#SyncState *
