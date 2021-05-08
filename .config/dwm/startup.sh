@@ -6,7 +6,7 @@ mpd &
 redshift &
 acpihandler &
 xbanish &
-sudo crond &
+#sudo crond &
 tgKbmap &
 wallpaper &
 lemonblocks &

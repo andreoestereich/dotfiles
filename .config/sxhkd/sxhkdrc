@@ -32,7 +32,7 @@ super + w
 super + shift + e
     texEDIT
 super + shift + f
-    n
+    $TERMINAL -e n
 super + shift + p
     mario
 super + shift + m
@@ -42,7 +42,7 @@ super + shift + n
 super + shift + i
 	$TERMINAL -e htop
 super + shift + f
-	$TERMINAL -e nnn
+	$TERMINAL -e n
 super + shift + o
 	$TERMINAL -e ncmpcpp &> /dev/null
 super + shift + k

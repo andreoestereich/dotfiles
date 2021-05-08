@@ -7,7 +7,7 @@ export TERMINAL=st
 export PDFVIEWER=zathura
 export XDG_CONFIG_HOME=$HOME/.config
 
-export NNN_BMS='t:~/repos/tese/;d:~/Downloads/;h:~/;c:~/.wine/drive_c/SIERRA/Caesar3/'
+export NNN_BMS='d:~/Downloads/;h:~/;l:~/repos/edushit/em/'
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
