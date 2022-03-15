@@ -41,7 +41,7 @@ function n() {
     # stty lwrap undef
     # stty lnext undef
 
-    nnn "$@"
+    nnn -R "$@"
 
     if [ -f "$NNN_TMPFILE" ]; then
             . "$NNN_TMPFILE"
@@ -54,16 +54,15 @@ function n() {
 alias ls='ls --color=auto'
 alias v='nvim'
 alias vim='nvim'
-alias z='swallow zathura'
-alias m='swallow mpv'
-alias julius='cd /home/andrelo/.wine/drive_c/GOG\ Games/Caesar\ 3/; swallow julius-game'
-alias augustus='cd /home/andrelo/.wine/drive_c/GOG\ Games/Caesar\ 3/; swallow augustus-game'
-alias sxiv='swallow sxiv'
+alias z='zathura'
+alias m='mpv'
+alias julius='cd /home/andrelo/.wine/drive_c/GOG\ Games/Caesar\ 3/; julius-game'
+alias augustus='cd /home/andrelo/.wine/drive_c/GOG\ Games/Caesar\ 3/; augustus-game'
 alias s='startx'
 alias yt='youtube-viewer -f --player=mpv --append-arg="ytdl-format=22/mp4/best --keep-open"'
-alias ytdm='youtube-dl -x --audio-format "mp3" --audio-quality 320K --add-metadata '
+alias ytdm='youtube-dl -x --audio-format "mp3" --audio-quality 320K '
 alias serv='python3 -m http.server'
 alias pi='sudo pacman'
-alias cdc='cd /home/andrelo/.wine/drive_c/SIERRA/Caesar3/'
+alias pamcan='pacman'
 alias wtt="curl -s wttr.in/mondai-brazil"
-alias neomutt='neomutt; pkill -RTMIN+2 lemonblocks;'
+alias vrVPN="sudo openfortivpn -c ~/.config/ictpvpn"

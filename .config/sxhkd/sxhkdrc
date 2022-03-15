@@ -18,6 +18,10 @@ super + shift + i
 super + shift + c
 	favclips
 
+#clipboards mais importantes
+super + shift + f
+	$TERMINAL -e nnn
+
 # make sxhkd reload its configuration files:
 super + Escape
 	{pkill -USR1 -x sxhkd; notify-send "SXHKD config reloaded."; }
@@ -32,11 +36,11 @@ super + w
 super + shift + e
     texEDIT
 super + shift + f
-    $TERMINAL -e n
+    $TERMINAL -e nnn
 super + shift + p
     mario
 super + shift + m
-	{ $TERMINAL -e neomutt; pkill -RTMIN+2 lemonblocks; }
+	{ $TERMINAL -e neomutt; mailbar; }
 super + shift + n
 	$TERMINAL -e newsboat
 super + shift + i
@@ -50,12 +54,12 @@ super + shift + k
 super + shift + r
 	sxiv $HOME/.cache/meteogram
 
-## Recording shit
+### Recording shit
 #super + shift + r
 #    dmenurecord
 #super + r
 #    dmenurecord kill
-#
+
 super + shift + t
      mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title='mpvfloat' /dev/video0
 
@@ -69,11 +73,11 @@ XF86Audio{Next,Prev}
 XF86AudioPlay
     mpc toggle
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
-    xbacklight {-inc,-dec} 5; pkill -RTMIN+5 lemonblocks;
+    xbacklight {-inc,-dec} 5; brtbar;
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
-    {pamixer {-d,-i} 5;pkill -RTMIN+4 lemonblocks}
+    {pamixer {-d,-i} 5;volbar}
 XF86AudioMute
-    {pamixer -t;pkill -RTMIN+4 lemonblocks}
+    {pamixer -t;volbar}
 
 ##
 ## bspwm hotkeys
