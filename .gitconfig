@@ -3,3 +3,5 @@
 	name = André Luis Oestereich
 [credential]
 	helper = cache
+[pull]
+	rebase = false
