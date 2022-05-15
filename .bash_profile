@@ -3,7 +3,7 @@ PATH=$PATH:~/.local/bin
 
 export EDITOR=nvim
 export BROWSER=qutebrowser
-export TERMINAL=st
+export TERMINAL=alacritty
 export PDFVIEWER=zathura
 export XDG_CONFIG_HOME=$HOME/.config
 

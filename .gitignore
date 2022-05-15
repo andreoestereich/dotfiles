@@ -10,10 +10,12 @@
 !.xinitrc
 !.config/
 .config/*
+.config/alacritty/
 !.config/bspwm/
 !.config/sxhkd/
 !.config/zathura/
 !.config/dwm/
 !.config/youtube-viewer/
 !.config/dunst/
+!.config/xmobar/
 !.ssh/config
