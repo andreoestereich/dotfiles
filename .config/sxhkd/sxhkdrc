@@ -45,8 +45,6 @@ super + shift + n
 	$TERMINAL -e newsboat
 super + shift + i
 	$TERMINAL -e htop
-super + shift + f
-	$TERMINAL -e n
 super + shift + o
 	$TERMINAL -e ncmpcpp &> /dev/null
 super + shift + k
@@ -73,11 +71,11 @@ XF86Audio{Next,Prev}
 XF86AudioPlay
     mpc toggle
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
-    xbacklight {-inc,-dec} 5; brtbar;
+    xbacklight {-inc,-dec} 5; pkill -RTMIN+5 lemonblocks;
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
-    {pamixer {-d,-i} 5;volbar}
+    {pamixer {-d,-i} 5; pkill -RTMIN+4 lemonblocks}
 XF86AudioMute
-    {pamixer -t;volbar}
+    {pamixer -t; pkill -RTMIN+4 lemonblocks}
 
 ##
 ## bspwm hotkeys

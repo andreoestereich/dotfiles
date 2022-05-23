@@ -1,7 +1,9 @@
 [user]
 	email = andreoestereich@gmail.com
-	name = André Luis Oestereich
+	name = andreoestereich
 [credential]
 	helper = cache
 [pull]
 	rebase = false
+[core]
+	excludesFile = ~/.config/gitignore

@@ -1,6 +1,5 @@
 /*
 !.gitignore
-!.gitconfig
 !.vimrc
 !.vim/andrelo/
 !.vim/colors/
@@ -12,6 +11,9 @@
 .config/*
 .config/alacritty/
 !.config/bspwm/
+!.config/nvim/
+.config/nvim/*
+!.config/nvim/*.vim
 !.config/sxhkd/
 !.config/zathura/
 !.config/dwm/

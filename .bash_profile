@@ -3,13 +3,13 @@ PATH=$PATH:~/.local/bin
 
 export EDITOR=nvim
 export BROWSER=qutebrowser
-export TERMINAL=alacritty
+export TERMINAL=st
 export PDFVIEWER=zathura
 export XDG_CONFIG_HOME=$HOME/.config
 
 #nnn configs
 export NNN_BMS='d:~/Downloads/;h:~/;l:~/repos/edushit/em/'
-export NNN_PLUG='p:preview-tui;d:fzcd'
+export NNN_PLUG='i:imgview;d:fzcd;o:xdgdefault'
 export NNN_FIFO=/tmp/nnn.fifo
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
