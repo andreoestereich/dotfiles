@@ -65,4 +65,5 @@ alias serv='python3 -m http.server'
 alias pi='sudo pacman'
 alias pamcan='pacman'
 alias wtt="curl -s wttr.in/mondai-brazil"
+alias subd="subliminal --opensubtitles andreoestereich `pass opensubtitles` download -l en"
 alias vrVPN="sudo openfortivpn -c ~/.config/ictpvpn"

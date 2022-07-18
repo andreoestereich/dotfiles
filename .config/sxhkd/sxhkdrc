@@ -5,6 +5,11 @@ super + Return
 # program launcher
 super + p
 	dmenu_run
+
+# program launcher
+super + shift + p
+	linkhandler "$(xclip -o -sel clip)"
+
 #
 # bluetooth connecting
 super + shift + b
@@ -38,9 +43,9 @@ super + shift + e
 super + shift + f
     $TERMINAL -e nnn
 super + shift + p
-    mario
+    linkhandler "$( xclip -selection c -o )"
 super + shift + m
-	{ $TERMINAL -e neomutt; mailbar; }
+	{ $TERMINAL -e neomutt; pkill -RTMIN+2 lemonblocks; }
 super + shift + n
 	$TERMINAL -e newsboat
 super + shift + i

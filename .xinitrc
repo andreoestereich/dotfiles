@@ -1,16 +1,15 @@
-
-#systemctl --user start X.target
-
-~/.config/dwm/startup.sh &
-xsetroot -cursor_name left_ptr
-#~/.xmonad/startup.sh &
-
+## reset lasg bg
 ~/.fehbg &
 
-sxhkd &
+## systemctl stuff
+/etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+systemctl --user start X.target
+
+## mouse and keyboard config
+xsetroot -cursor_name left_ptr
 setxkbmap br
 
-#exec bspwm
+## load keybinds
+sxhkd &
+
 exec dwm
-#exec xmonad
-#exec startlxde

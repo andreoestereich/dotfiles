@@ -8,5 +8,5 @@ xbanish &
 #sudo crond &
 tgKbmap &
 #wallpaper &
-#lemonblocks &
+lemonblocks &
 #slstatus &>/dev/null &

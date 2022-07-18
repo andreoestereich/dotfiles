@@ -17,6 +17,7 @@ map <leader>t :TagbarToggle<CR>
 map <leader>f <CMD>NnnExplorer<CR>
 
 imap <C-k> <CMD>lua vim.lsp.buf.signature_help()<cr>
+nnoremap <C-f> <cmd>lua vim.diagnostic.setqflist()<CR>
 
   "  Mappings.
   "  See `:help vim.lsp.*` for documentation on any of the below functions

@@ -1,5 +1,5 @@
 #adding more things to be run rightaway
-PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin
 
 export EDITOR=nvim
 export BROWSER=qutebrowser
