@@ -7,7 +7,13 @@ export TERMINAL=st
 export PDFVIEWER=zathura
 export XDG_CONFIG_HOME=$HOME/.config
 
+#icons
+export TERM_ICON="/usr/local/share/pixmaps/st.png"
+export NNN_ICON="/usr/share/icons/hicolor/64x64/apps/nnn.png"
+export NVIM_ICON="/usr/share/pixmaps/nvim.png"
+
 #nnn configs
+export NNN_OPENER=nuke
 export NNN_BMS='d:~/Downloads/;h:~/;l:~/repos/edushit/em/'
 export NNN_PLUG='i:imgview;d:fzcd;o:xdgdefault'
 export NNN_FIFO=/tmp/nnn.fifo

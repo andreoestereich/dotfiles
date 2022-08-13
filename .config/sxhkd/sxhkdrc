@@ -25,7 +25,7 @@ super + shift + c
 
 #clipboards mais importantes
 super + shift + f
-	$TERMINAL -e nnn
+	$TERMINAL -e  chicon -t n /usr/share/icons/hicolor/64x64/apps/nnn.png
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -40,14 +40,12 @@ super + w
     exefavs
 super + shift + e
     texEDIT
-super + shift + f
-    $TERMINAL -e nnn
 super + shift + p
     linkhandler "$( xclip -selection c -o )"
 super + shift + m
-	{ $TERMINAL -e neomutt; pkill -RTMIN+2 lemonblocks; }
+	{ $TERMINAL -e  chicon -t neomutt /usr/share/doc/neomutt/logo/neomutt-32.png; pkill -RTMIN+2 lemonblocks; }
 super + shift + n
-	$TERMINAL -e newsboat
+	$TERMINAL -e  chicon -t newsboat /usr/share/icons/hicolor/64x64/apps/newsboat.png
 super + shift + i
 	$TERMINAL -e htop
 super + shift + o
